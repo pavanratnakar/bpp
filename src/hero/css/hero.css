@@ -1,0 +1,55 @@
+/************************************************************************
+    Start of BPP Hero Container
+************************************************************************/
+
+.bbp-hero-container{
+    position:           relative;
+}
+
+.bbp-hero-container h1{
+    font-size:          2em;
+    line-height:        1.3em;
+    margin:             0 0 0.2em 0;
+}
+
+.bbp-hero-container h2{
+    font-size:          1.2em;
+    line-height:        1.4em;
+    margin:             0 0 0.2em 0;
+}
+
+.bbp-hero-container p{
+    font-size:          1em;
+    line-height:        1.2em;
+}
+
+.bbp-hero-container a{
+    color:              inherit;
+}
+
+.bbp-hero-container .bbp-hero-content-container{
+    position:           absolute;
+    top:                50px;
+    left:               16px;
+}
+
+.bbp-hero-container .bpp-actions{
+    margin:             0.6em 0 0 0;
+}
+
+.bbp-hero-container .bpp-actions button.transparent{
+    opacity:            0.8;
+    filter:             progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+}
+
+.bbp-hero-container .bpp-actions button.transparent:hover{
+    opacity:            1;
+    filter:             progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+}
+
+/************************************************************************
+    End of BPP Hero Container
+************************************************************************/
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.bpp-hero-css { display: none; }

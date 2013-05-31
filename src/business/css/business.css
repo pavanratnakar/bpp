@@ -1,0 +1,136 @@
+.bpp-content-left-container{
+    width: 65%;
+}
+
+.bpp-content-right-container{
+    width: 35%;
+}
+
+.bpp-content ol.bpp-no-order,
+.bpp-content ul.bpp-no-order {
+    list-style: none outside none;
+    padding: 0;
+}
+
+/************************************************************************
+    BPP Business description
+************************************************************************/
+
+.bpp-description h3{
+    font-weight: normal;
+    font-size: 1em;
+}
+
+/************************************************************************
+    End of BPP Business description
+************************************************************************/
+
+/************************************************************************
+    BPP Business Book Table
+************************************************************************/
+
+.bpp-book-table legend{
+    border: none;
+    font-size: 1em;
+    color: grey;
+}
+.bpp-book-table input[type="text"]{
+    width: 85%;
+}
+
+.bpp-book-table .bpp-book-submit{
+    vertical-align: bottom;
+}
+
+/************************************************************************
+    End of BPP Business Book Table
+************************************************************************/
+
+/************************************************************************
+    BPP Business detail Container
+************************************************************************/
+
+.bpp-detail .bpp-sub-3-content{
+    border-top: 1px solid #C9C9C9;
+    padding: 6px 0;
+}
+
+.bpp-detail .bpp-sub-2-head{
+    color: grey;
+}
+
+/* HACKY FIX */
+.bpp-detail .bpp-detail-hours{
+    width: 56%;
+}
+
+.bpp-detail .bpp-detail-status{
+    color: green;
+}
+
+/************************************************************************
+    End of BPP Business detail Container
+************************************************************************/
+
+/************************************************************************
+    BPP Photo Box
+************************************************************************/
+
+.bpp-photo-box-container {
+    position: relative;
+}
+
+.bpp-photo-box {
+    overflow: hidden;
+    position: relative;
+    height: 40px;
+}
+
+.bpp-photo-box img {
+    min-height: 40px;
+    width: 100%;
+}
+
+.bpp-photo-box-container aside,
+.bpp-photo-box aside {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.3em 0em;
+    color: white;
+    width: 100%;
+    font-size: 80%;
+    text-align: left;
+    background: -moz-linear-gradient(top,  rgba(16,27,30,0) 0%, rgba(12,2,2,1) 90%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,27,30,0)), color-stop(90%,rgba(12,2,2,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(16,27,30,0) 0%,rgba(12,2,2,1) 90%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00101b1e', endColorstr='#0c0202',GradientType=0 ); /* IE6-9 */
+}
+
+.bpp-photo-box-container aside a,
+.bpp-photo-box aside a{
+    color: white;
+    letter-spacing: 0.1em;
+}
+
+/************************************************************************
+    End of BPP Photo Box
+************************************************************************/
+
+/************************************************************************
+    BPP Business Thumbnail Gallery
+************************************************************************/
+
+.bpp-thumbnail-gallery .bpp-thumbnail {
+    width: 120px;
+}
+
+/************************************************************************
+    End of BPP Business Thumbnail Gallery
+************************************************************************/
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.srpl-business-css { display: none; }

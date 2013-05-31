@@ -1,0 +1,49 @@
+{
+    "name":         "bpp",
+    "version":      "0.0.1",
+    "description":  "BPP - Yahoo! local.yahoo.com components",
+    "author":       "Locals team <feynman-blr@yahoo-inc.com>",
+    "homepage":     "http://local.yahoo.com",
+    "bugs": { 
+        "url" : "" 
+    },
+    "contributors":[
+        {"name": "Pavan Ratnakar"}
+    ],
+    "os": ["darwin", "linux", "win32"], 
+    "engines": {
+        "node": ">=0.6.0"
+    },
+    "main": "",
+    "bin": {
+
+    },
+    "scripts": {
+
+    },
+
+    "dependencies": {
+        "underscore":   "*",
+        "shifter":      "*",
+        "async":        "*",
+        "burrito":      "*",
+        "glob":         "*",
+        "glob-whatev":  "*",
+        "tako":         "0.2.2",
+        "combohandler": "*",
+        "watchr":       "*",
+        "commander":    "*",
+        "uglify-js":    "*",
+        "wrench":       "*",
+        "express":      "2.5.10",
+        "request":      "*",
+        "xml2json":     "*",
+        "mime":         "*"
+    },
+    "keywords": "feynman",
+    "license": "Yahoo! Proprietary",
+    "repository": {
+        "type": "svn",
+        "url": ""
+    }
+}

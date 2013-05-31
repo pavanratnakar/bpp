@@ -1,0 +1,98 @@
+/************************************************************************
+    BPP Global Properties
+************************************************************************/
+
+body {
+    font: 13px/1.231 "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #5F5F5F;
+    background-color: #FFFFFF;
+    margin: 0;
+}
+
+a {
+    text-decoration:    none;
+    color: #1D1DA3;
+}
+
+a:hover,
+a:focus{
+    text-decoration:    underline;
+    outline: none;
+}
+
+select,
+input,
+button,
+textarea {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/************************************************************************
+    Start of BPP General
+************************************************************************/
+
+.bpp p {
+    margin: 0;
+}
+
+.bpp .f-left {
+    float: left;
+    display: inline;
+}
+
+.bpp .f-right{
+    float: right;
+    display: inline;
+}
+
+.bpp .bpp-hide {
+    display: none;
+}
+
+.bbp-wrapper {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.bpp-content .bpp-sub-head {
+    font-size: 1.2em;
+    font-weight: normal;
+    padding: 0 0 0.6em;
+}
+
+.bpp-content .bpp-sub-content {
+    margin: 1em 0 2em;
+    padding: 0 1em;
+}
+
+/************************************************************************
+    End of BPP General
+************************************************************************/
+
+/************************************************************************
+    Start of BPP Header
+************************************************************************/
+
+.header {
+    margin: 0 0;
+}
+
+.header .pure-menu {
+    padding: 1em;
+}
+
+.header .pure-menu-heading {
+    font-size: 2em;
+    padding: 0;
+}
+
+/************************************************************************
+    End of BPP Header
+************************************************************************/
+
+/************************************************************************
+    End of BPP Global Properties
+************************************************************************/
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.bpp-app-css { display: none; }

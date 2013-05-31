@@ -1,0 +1,43 @@
+/************************************************************************
+    Start of BPP Rating And Review
+************************************************************************/
+
+.bpp-rating-reviews li{
+    margin: 0 0 1.5em 0;
+}
+
+.bpp-rating-reviews p{
+    margin: 0.2em 0 0;    
+}
+
+.bpp-rating-reviews .bpp-review-name{
+	font-weight: bold;
+}
+
+/************************x************************************************
+    Start of BPP Yahoo! Reviews
+************************************************************************/
+
+.bpp-yahoo-reviews .bpp-reviews-actions{
+	position: relative;
+    border-bottom: 1px solid #C9C9C9;
+    border-top: 1px solid #C9C9C9;
+    padding: 0.4em 0;
+    margin: 0 0 0.769em 0;
+}
+
+.bpp-yahoo-reviews .bpp-reviews-count {
+	position: absolute;
+	right: 5px;
+}
+
+/************************x************************************************
+    End of BPP Yahoo! Reviews
+************************************************************************/
+
+/************************x************************************************
+    End of BPP Rating And Review
+************************************************************************/
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.srpl-reviews-css { display: none; }
