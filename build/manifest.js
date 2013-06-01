@@ -34,7 +34,8 @@ YUI_config.groups.bpp = {
         },
         "bpp-business-view": {
             "requires": [
-                "view"
+                "view",
+                "bpp-review-view"
             ],
             "path": "business/js/view.js",
             "type": "js"
@@ -117,35 +118,42 @@ YUI_config.groups.bpp = {
             "path": "map/css/map.css",
             "type": "css"
         },
-        "srpl-reviews-model": {
+        "bpp-review-model-list": {
+            "requires": [
+                "model-list",
+                "bpp-review-model"
+            ],
+            "path": "review/js/model-list.js",
+            "type": "js"
+        },
+        "bpp-review-model": {
             "requires": [
                 "model"
             ],
-            "path": "reviews/js/model.js",
+            "path": "review/js/model.js",
             "type": "js"
         },
-        "bpp-reviews-templates": {
+        "bpp-review-templates": {
             "requires": [
                 "bpp-template"
             ],
-            "path": "reviews/js/templates.js",
+            "path": "review/js/templates.js",
             "type": "js"
         },
-        "srpl-reviews-view": {
+        "bpp-review-view": {
             "requires": [
                 "view",
-                "srpl-reviews-model",
-                "srpl-reviews-css",
-                "srpl-reviews-templates",
-                "srpl-util",
-                "srpl-config"
+                "bpp-review-model",
+                "bpp-review-css",
+                "bpp-util",
+                "bpp-config"
             ],
-            "path": "reviews/js/view.js",
+            "path": "review/js/view.js",
             "type": "js"
         },
-        "bpp-reviews-css": {
+        "bpp-review-css": {
             "requires": [],
-            "path": "reviews/css/reviews.css",
+            "path": "review/css/review.css",
             "type": "css"
         }
     }

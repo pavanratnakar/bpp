@@ -28,7 +28,33 @@ textarea {
 }
 
 /************************************************************************
-    Start of BPP General
+    Start of BPP Custom Buttons
+************************************************************************/
+
+.bpp button.noborder,
+.bpp input[type=button].noborder{
+    border: none;
+    background: none;
+    text-decoration: none;
+    color: #1D1DA3;
+    cursor: pointer;
+    padding: 0;
+}
+
+.bpp input[type=button].noborder:hover,
+.bpp button.noborder:hover{
+    text-decoration: underline;
+}
+
+.bpp button.noborder:active,
+.bpp button.noborder:focus,
+.bpp input[type=button].noborder:active,
+.bpp input[type=button].noborder:focus{
+    text-decoration: underline;
+}
+
+/************************************************************************
+    End of BPP Custom Buttons
 ************************************************************************/
 
 .bpp p {
@@ -54,15 +80,28 @@ textarea {
     margin: 0 auto;
 }
 
-.bpp-content .bpp-sub-head {
+.bpp-content .bpp-module {
+    margin: 1em 0 2em;
+    padding: 0 1em;
+}
+
+.bpp-content .bpp-module-head-container {
+    padding: 0 0 0.6em;
+}
+
+.bpp-content .bpp-module-head-container .bpp-module-head {
+    padding: 0;
+}
+
+.bpp-content .bpp-module-head {
+    line-height: 1.8em;
     font-size: 1.2em;
     font-weight: normal;
     padding: 0 0 0.6em;
 }
 
-.bpp-content .bpp-sub-content {
-    margin: 1em 0 2em;
-    padding: 0 1em;
+.bpp-content .bpp-module-footer {
+    margin: 0.8em 0 0 0;
 }
 
 /************************************************************************

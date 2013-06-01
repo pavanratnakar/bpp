@@ -12,6 +12,8 @@
 
 .bpp-rating-reviews .bpp-review-name{
 	font-weight: bold;
+    display: inline-block;
+    margin: 0 0.5em;
 }
 
 /************************x************************************************
@@ -26,9 +28,28 @@
     margin: 0 0 0.769em 0;
 }
 
+.bpp-yahoo-reviews .bpp-reviews-actions button{
+    margin: 0 1em;
+    color: #5F5F5F;
+    font-weight: 0.9em;
+}
+
+.bpp-yahoo-reviews .bpp-reviews-actions button.active{
+    font-weight:        bold;
+}
+
 .bpp-yahoo-reviews .bpp-reviews-count {
 	position: absolute;
 	right: 5px;
+    top: 5px;
+}
+
+.bpp-yahoo-reviews .bbp-module-footer{
+    text-align: center;
+    background-color: #E2E2F7;
+    padding: 0.5em 0;
+    border-bottom: 1px solid #C9C9C9;
+    border-top: 1px solid #C9C9C9;
 }
 
 /************************x************************************************

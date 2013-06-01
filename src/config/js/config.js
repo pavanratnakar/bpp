@@ -2,7 +2,8 @@ YUI.add('bpp-config', function(Y){
 
     var config = {
         containers: {
-            business : '.bpp-content'
+            business : '.bpp-content',
+            review : '.bpp-yahoo-reviews'
         },
         ymaps: {
             appid: 'ymapsaura2',
@@ -20,8 +21,8 @@ YUI.add('bpp-config', function(Y){
         },
         business:{
             descriptionLimit : 300,
-            detailLimit : 2,
-            hourLimit : 20
+            detailLimit : 4,
+            dayHoursLimit : 5
         }
     };
 

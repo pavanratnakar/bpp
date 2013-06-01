@@ -55,7 +55,7 @@
         <link rel="stylesheet" href="../../src/hero/css/hero.css">
         <link rel="stylesheet" href="../../src/lib/css/lib.css">
         <link rel="stylesheet" href="../../src/business/css/business.css">
-        <link rel="stylesheet" href="../../src/reviews/css/reviews.css">
+        <!--<link rel="stylesheet" href="../../src/review/css/review.css">-->
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome-ie7.css">
         <!-- END OF STYLESHEETS -->
@@ -105,19 +105,19 @@
                                     </a>
                                 </p>
                                 <div class="bpp-actions">
-                                    <button class="pure-button transparent bpp-actions-stp">
+                                    <button type="button" class="pure-button transparent bpp-actions-stp">
                                         <i class="icon-cog icon-spin"></i>
                                         Send to phone
                                     </button>
-                                    <button class="pure-button transparent bpp-actions-directions">
+                                    <button type="button" class="pure-button transparent bpp-actions-directions">
                                         <i class="icon-cog icon-spin"></i>
                                         Directions
                                     </button>
-                                    <button class="pure-button transparent bpp-actions-share">
+                                    <button type="button" class="pure-button transparent bpp-actions-share">
                                         <i class="icon-cog icon-spin"></i>
                                         Share
                                     </button>
-                                    <button class="pure-button transparent bpp-actions-menu">
+                                    <button type="button" class="pure-button transparent bpp-actions-menu">
                                         <i class="icon-cog icon-spin"></i>
                                         Menu
                                     </button>
@@ -138,15 +138,15 @@
             <div class="bpp-content">
                 <div class="pure-u-2-3 bpp-content-left-container">
                     <!-- START OF BPP SUB CONTENT MODULE : DESCRIPTION -->
-                    <div class="bpp-sub-content bpp-description">
+                    <div class="bpp-module bpp-description">
                         <h3>
                             The recipient of the conveted James Beard cooking award, Chef Gary Danko practices his genius at his eponymour, 75-seat Gary Danki restaurant. Reservations usually have to be booked two months in advance. Luxurious appretixers, flvorful entreers, and deserts blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
                         </h3>
                     </div>
                     <!-- END OF BPP SUB CONTENT MODULE : DESCRIPTION -->
                     <!-- START OF BPP SUB CONTENT MODULE : THUMBNAIL GALLERY-->
-                    <div class="bpp-sub-content bpp-thumbnail-gallery">
-                        <div class="bpp-sub-2-content pure-g-r">
+                    <div class="bpp-module bpp-thumbnail-gallery">
+                        <div class="bpp-module-content pure-g-r">
                             <div class="pure-u-1-4">
                                 <img class="bpp-thumbnail" src="http://s3-media2.ak.yelpcdn.com/bphoto/lansxaYjxNSWAEuDSUl-NA/ms.jpg" alt="" />
                             </div>
@@ -188,14 +188,18 @@
                     </div>
                     <!-- END OF BPP SUB CONTENT MODULE : THUMBNAIL GALLERY -->
                     <!-- START OF BPP SUB CONTENT MODULE : FOURSQUARE -->
-                    <div class="bpp-sub-content">
-                        <h4 class="bpp-sub-head">Tips of Foursquare</h4>
-                        <div class="bpp-sub-2-content">
+                    <div class="bpp-module">
+                        <h4 class="bpp-module-head">
+                            Tips of Foursquare
+                        </h4>
+                        <div class="bpp-module-content">
                             <ul class="bpp-no-order">
                                 <li>"... at bar. Ask that the cheece cart be brough round. Do what comes naturally." <span class="tips">(7 tips)</span></li>
                                 <li>"Try the Lobster Risotto - It's like amazing (via @Foodspotting)" <span class="tips">(3 tips)</span></li>
                                 <li>"... cheese cart, great wine list, great atmosphere, great service (best I've..." <span class="tips">(5 tips)</span></li>
                             </ul>
+                        </div>
+                        <div class="bpp-module-footer">
                             <div class="bpp-actions">
                                 <a href="#" title="Read all 77 tips on Foursquare">
                                     Read all 77 tips on Foursquare
@@ -205,9 +209,11 @@
                     </div>
                     <!-- END OF BPP SUB CONTENT MODULE : FOURSQUARE -->
                     <!-- START OF BPP SUB CONTENT MODULE : YELP REVIEWS -->
-                    <div class="bpp-sub-content bpp-rating-reviews bpp-yelp-reviews">
-                        <h4 class="bpp-sub-head">Reviews on Yelp</h4>
-                        <div class="bpp-sub-2-content">
+                    <div class="bpp-module bpp-rating-reviews bpp-yelp-reviews">
+                        <h4 class="bpp-module-head">
+                            Reviews on Yelp
+                        </h4>
+                        <div class="bpp-module-content">
                             <ul class="bpp-no-order">
                                 <li class="pure-g">
                                     <div class="pure-u-1-12">
@@ -230,7 +236,7 @@
                                 </li>
                                 <li class="pure-g">
                                     <div class="pure-u-1-12">
-                                        <img class="bpp-avatar" alt="Tilo Mitra's avatar" src="http://s3-media3.ak.yelpcdn.com/photo/hLUYWzq90iCy965jYiNpew/ss.jpg" height="40" width="40">
+                                        <img class="bpp-avatar" alt="Tilo Mitra's avatar" src="http://s3-media3.ak.yelpcdn.com/photo/ZkjqwMLZcEM2qQBIGX0c7Q/ss.jpg" height="40" width="40">
                                     </div>
                                     <div class="pure-u-11-12">
                                         <div class="bpp-rating-review f-left">
@@ -243,13 +249,13 @@
                                         <span class="bpp-review-name">Annie. T</span>
                                         <span class="bpp-review-daate">06/02/13</span>
                                         <p class="bpp-review-desc">
-                                            I am finally writing my first Yelp review. What better restaurant to write my first review about than Gary Danko? What I enjoyed about this restaurant was the amount of choice you had. You have the choice of getting a 3, 4, or 5 course meal. And within those courses you can choose anything on the menu. So you can have 5 main courses, 3 appetizers.
+                                            I was absolutely blown away by both the service (I was probably helped by 7 different waiters and my cup of water was almost never empty) and the quality of the food. The atmosphere is not, what you say, modern but everything else about this place makes up for that. I ordered the four course meal, which included:
                                         </p>
                                     </div>
                                 </li>
                                 <li class="pure-g">
                                     <div class="pure-u-1-12">
-                                        <img class="bpp-avatar" alt="Tilo Mitra's avatar" src="http://s3-media3.ak.yelpcdn.com/photo/hLUYWzq90iCy965jYiNpew/ss.jpg" height="40" width="40">
+                                        <img class="bpp-avatar" alt="Tilo Mitra's avatar" src="http://s3-media1.ak.yelpcdn.com/photo/5k7bM6Py8eqmjJ73S-7s3w/ss.jpg" height="40" width="40">
                                     </div>
                                     <div class="pure-u-11-12">
                                         <div class="bpp-rating-review f-left">
@@ -262,11 +268,13 @@
                                         <span class="bpp-review-name">Annie. T</span>
                                         <span class="bpp-review-daate">06/02/13</span>
                                         <p class="bpp-review-desc">
-                                            I am finally writing my first Yelp review. What better restaurant to write my first review about than Gary Danko? What I enjoyed about this restaurant was the amount of choice you had. You have the choice of getting a 3, 4, or 5 course meal. And within those courses you can choose anything on the menu. So you can have 5 main courses, 3 appetizers.
+                                            Place was still full when we arrived at 9 (and was still seating guests until 10!) but we were immediately seated.  Ambiance is nothing to write home about, but low noise level (easy conversations).
                                         </p>
                                     </div>
                                 </li>
                             </ul>
+                        </div>
+                        <div class="bbp-module-footer">
                             <div class="bpp-actions">
                                 <a href="#" title="Read all 3266 Reviews on Yelp">
                                     Read all 3266 Reviews on Yelp
@@ -276,18 +284,31 @@
                     </div>
                     <!-- END OF BPP SUB CONTENT MODULE : YELP REVIEWS -->
                     <!-- START OF BPP SUB CONTENT MODULE : YAHOO REVIEWS -->
-                    <div class="bpp-sub-content bpp-rating-reviews bpp-yahoo-reviews">
-                        <h4 class="bpp-sub-head">Reviews on Yahoo!</h4>
-                        <div class="bpp-sub-2-content">
+                    <div class="bpp-module bpp-rating-reviews bpp-yahoo-reviews">
+                        <div class="pure-g bpp-module-head-container">
+                            <div class="pure-u-1-4">
+                                <h4 class="bpp-module-head">
+                                    Reviews on Yahoo!
+                                </h4>
+                            </div>
+                            <div class="pure-u-3-4">
+                                <a class="pure-button pure-button-primary" title="Write a review">
+                                    Write a review
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bpp-module-content">
                             <div class="bpp-actions bpp-reviews-actions">
-                                <a href="#" title="Popular">Popular</a>
-                                <a href="#" title="Newest">Newest</a>
-                                <a href="#" title="Oldest">Oldest</a>
+                                <div class="bpp-reviews-actions-type">
+                                    <button type="button" class="noborder active">Popular</button>
+                                    <button type="button" class="noborder">Newest</button>
+                                    <button type="button" class="noborder">Oldest</button>
+                                </div>
                                 <span class="bpp-reviews-count">99 Reviews</span>
                             </div>
                             <div class="bpp-reviews-container">
                                 <!-- START OF BPP POPULAR REVIEW MODULE -->
-                                <div class="bpp-popular-reviews">
+                                <div class="bpp-popular-reviews bpp-reviews">
                                     <ul class="bpp-no-order">
                                        <li class="pure-g">
                                             <div class="pure-u-1-12">
@@ -308,12 +329,50 @@
                                                 </p>
                                             </div>
                                         </li>
+                                        <li class="pure-g">
+                                            <div class="pure-u-1-12">
+                                                <img class="bpp-avatar" alt="Tilo Mitra's avatar" src="http://s3-media3.ak.yelpcdn.com/photo/ZkjqwMLZcEM2qQBIGX0c7Q/ss.jpg" height="40" width="40">
+                                            </div>
+                                            <div class="pure-u-11-12">
+                                                <div class="bpp-rating-review f-left">
+                                                    <a target="_blank" href="#">
+                                                        <span class="bpp-rating-static bpp-rating-40">
+                                                            4 out of 5 stars
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <span class="bpp-review-name">Annie. T</span>
+                                                <span class="bpp-review-daate">06/02/13</span>
+                                                <p class="bpp-review-desc">
+                                                    I was absolutely blown away by both the service (I was probably helped by 7 different waiters and my cup of water was almost never empty) and the quality of the food. The atmosphere is not, what you say, modern but everything else about this place makes up for that. I ordered the four course meal, which included:
+                                                </p>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
                                 <!-- END OF BPP POPULAR REVIEW MODULE -->
                                 <!-- START OF BPP NEWEST REVIEW MODULE -->
-                                <div class="bpp-newest-reviews">
+                                <div class="bpp-newest-reviews bpp-reviews bpp-hide">
                                     <ul class="bpp-no-order">
+                                        <li class="pure-g">
+                                            <div class="pure-u-1-12">
+                                                <img class="bpp-avatar" alt="Tilo Mitra's avatar" src="http://s3-media3.ak.yelpcdn.com/photo/ZkjqwMLZcEM2qQBIGX0c7Q/ss.jpg" height="40" width="40">
+                                            </div>
+                                            <div class="pure-u-11-12">
+                                                <div class="bpp-rating-review f-left">
+                                                    <a target="_blank" href="#">
+                                                        <span class="bpp-rating-static bpp-rating-40">
+                                                            4 out of 5 stars
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <span class="bpp-review-name">Annie. T</span>
+                                                <span class="bpp-review-daate">06/02/13</span>
+                                                <p class="bpp-review-desc">
+                                                    I was absolutely blown away by both the service (I was probably helped by 7 different waiters and my cup of water was almost never empty) and the quality of the food. The atmosphere is not, what you say, modern but everything else about this place makes up for that. I ordered the four course meal, which included:
+                                                </p>
+                                            </div>
+                                        </li>
                                        <li class="pure-g">
                                             <div class="pure-u-1-12">
                                                 <img class="bpp-avatar" alt="Tilo Mitra's avatar" src="http://s3-media3.ak.yelpcdn.com/photo/hLUYWzq90iCy965jYiNpew/ss.jpg" height="40" width="40">
@@ -337,11 +396,11 @@
                                 </div>
                                 <!-- END OF BPP NEWEST REVIEW MODULE -->
                                 <!-- START OF BPP OLDEST REVIEW MODULE -->
-                                <div class="bpp-oldest-reviews">
+                                <div class="bpp-oldest-reviews bpp-reviews bpp-hide">
                                     <ul class="bpp-no-order">
-                                       <li class="pure-g">
+                                        <li class="pure-g">
                                             <div class="pure-u-1-12">
-                                                <img class="bpp-avatar" alt="Tilo Mitra's avatar" src="http://s3-media3.ak.yelpcdn.com/photo/hLUYWzq90iCy965jYiNpew/ss.jpg" height="40" width="40">
+                                                <img class="bpp-avatar" alt="Tilo Mitra's avatar" src="http://s3-media1.ak.yelpcdn.com/photo/5k7bM6Py8eqmjJ73S-7s3w/ss.jpg" height="40" width="40">
                                             </div>
                                             <div class="pure-u-11-12">
                                                 <div class="bpp-rating-review f-left">
@@ -354,7 +413,26 @@
                                                 <span class="bpp-review-name">Annie. T</span>
                                                 <span class="bpp-review-daate">06/02/13</span>
                                                 <p class="bpp-review-desc">
-                                                    I am finally writing my first Yelp review. What better restaurant to write my first review about than Gary Danko? What I enjoyed about this restaurant was the amount of choice you had. You have the choice of getting a 3, 4, or 5 course meal. And within those courses you can choose anything on the menu. So you can have 5 main courses, 3 appetizers.
+                                                    Place was still full when we arrived at 9 (and was still seating guests until 10!) but we were immediately seated.  Ambiance is nothing to write home about, but low noise level (easy conversations).
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="pure-g">
+                                            <div class="pure-u-1-12">
+                                                <img class="bpp-avatar" alt="Tilo Mitra's avatar" src="http://s3-media3.ak.yelpcdn.com/photo/ZkjqwMLZcEM2qQBIGX0c7Q/ss.jpg" height="40" width="40">
+                                            </div>
+                                            <div class="pure-u-11-12">
+                                                <div class="bpp-rating-review f-left">
+                                                    <a target="_blank" href="#">
+                                                        <span class="bpp-rating-static bpp-rating-40">
+                                                            4 out of 5 stars
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <span class="bpp-review-name">Annie. T</span>
+                                                <span class="bpp-review-daate">06/02/13</span>
+                                                <p class="bpp-review-desc">
+                                                    I was absolutely blown away by both the service (I was probably helped by 7 different waiters and my cup of water was almost never empty) and the quality of the food. The atmosphere is not, what you say, modern but everything else about this place makes up for that. I ordered the four course meal, which included:
                                                 </p>
                                             </div>
                                         </li>
@@ -363,12 +441,19 @@
                                 <!-- END OF BPP OLDEST REVIEW MODULE -->
                             </div>
                         </div>
+                        <div class="bbp-module-footer">
+                            <button title="Load more reviews" type="button" class="noborder">
+                                Load more reviews
+                            </button>
+                        </div>
                     </div>
                     <!-- END OF BPP SUB CONTENT MODULE : YAHOO REVIEWS -->
                     <!-- START OF BPP SUB CONTENT MODULE : ADS -->
-                    <div class="bpp-sub-content">
-                        <h4 class="bpp-sub-head">Ads</h4>
-                        <div class="bpp-sub-content">
+                    <div class="bpp-module">
+                        <h4 class="bpp-module-head">
+                            Ads
+                        </h4>
+                        <div class="bpp-module-content">
                             Yet to be built
                         </div>
                     </div>
@@ -376,8 +461,8 @@
                 </div>
                 <div class="pure-u-1-3 bpp-content-right-container">
                     <!-- START OF BPP SUB CONTENT MODULE : BOOK OPEN TABLE -->
-                    <div class="bpp-sub-content bpp-book-table">
-                        <div class="bpp-sub-2-content">
+                    <div class="bpp-module bpp-book-table">
+                        <div class="bpp-module-content">
                             <form class="pure-form pure-form-stacked">
                                 <fieldset>
                                     <legend>Book for tonight on Open table</legend>
@@ -412,10 +497,10 @@
                     </div>
                     <!-- END OF BPP SUB CONTENT MODULE : BOOK OPEN TABLE -->
                     <!-- START OF BPP SUB CONTENT MODULE : DETAILS -->
-                    <div class="bpp-sub-content bpp-detail">
-                        <div class="bpp-sub-2-content">
-                            <div class="pure-g bpp-sub-3-content">
-                                <div class="pure-u-1-4 bpp-sub-2-head">Hours</div>
+                    <div class="bpp-module bpp-detail">
+                        <div class="bpp-module-content">
+                            <div class="pure-g bpp-sub-module">
+                                <div class="pure-u-1-4 bpp-sub-module-head">Hours</div>
                                 <div class="pure-u-3-4 pure-g">
                                     <div class="pure-u-1-5 bpp-detail-day">Today</div>
                                     <div class="pure-u-3-5 bpp-detail-hours">
@@ -430,8 +515,8 @@
                                     <div class="pure-u-1-5 bpp-detail-status">(open)</div>
                                 </div>
                             </div>
-                            <div class="pure-g bpp-sub-3-content">
-                                <div class="pure-u-1-4 bpp-sub-2-head">Category</div>
+                            <div class="pure-g bpp-sub-module">
+                                <div class="pure-u-1-4 bpp-sub-module-head">Category</div>
                                 <div class="pure-u-3-4 pure-g">
                                     <a target="_blank" title="Continental" href="#">Continental</a>, 
                                     <a target="_blank" title="American" href="#">American</a>, 
@@ -439,51 +524,65 @@
                                     <a target="_blank" title="French" href="#">French</a>
                                 </div>
                             </div>
-                            <div class="pure-g bpp-sub-3-content">
-                                <div class="pure-u-1-4 bpp-sub-2-head">Payment</div>
+                            <div class="pure-g bpp-sub-module">
+                                <div class="pure-u-1-4 bpp-sub-module-head">Payment</div>
                                 <div class="pure-u-3-4 pure-g">
                                     Discover, American Express, MasterCard, Diners Club, Visa
                                 </div>
                             </div>
-                            <div class="pure-g bpp-sub-3-content">
-                                <div class="pure-u-1-4 bpp-sub-2-head">Ambiance</div>
+                            <div class="pure-g bpp-sub-module">
+                                <div class="pure-u-1-4 bpp-sub-module-head">Ambiance</div>
                                 <div class="pure-u-3-4 pure-g">
                                     Romantic
                                 </div>
                             </div>
-                            <div class="pure-g bpp-sub-3-content">
-                                <div class="pure-u-1-4 bpp-sub-2-head">Feature</div>
+                            <div class="pure-g bpp-sub-module">
+                                <div class="pure-u-1-4 bpp-sub-module-head">Feature</div>
                                 <div class="pure-u-3-4 pure-g">
                                     Private Rooms
                                 </div>
                             </div>
-                            <div class="pure-g bpp-sub-3-content">
-                                <div class="pure-u-1-4 bpp-sub-2-head">Attire</div>
+                            <div class="pure-g bpp-sub-module">
+                                <div class="pure-u-1-4 bpp-sub-module-head">Attire</div>
                                 <div class="pure-u-3-4 pure-g">
                                     Dressy, Jacket Suggested
                                 </div>
                             </div>
-                            <div class="pure-g bpp-sub-3-content">
-                                <div class="pure-u-1-4 bpp-sub-2-head">Price</div>
+                            <div class="pure-g bpp-sub-module">
+                                <div class="pure-u-1-4 bpp-sub-module-head">Price</div>
                                 <div class="pure-u-3-4 pure-g">
                                     $$$$ ($50 +)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bpp-module-footer">
+                            <div class="bpp-actions pure-g">
+                                <div class="pure-u-2-3">
+                                    <button type="button" class="bpp-more-details noborder" style="display:none;">
+                                        View More Details
+                                    </button>
+                                </div>
+                                <div class="pure-u-1-3">
+                                    <a href="#" title="Suggest and edit">
+                                        Suggest an edit
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- END OF BPP SUB CONTENT MODULE : DETAILS -->
                     <!-- START OF BPP SUB CONTENT MODULE : SOCIAL WIDGET -->
-                    <div class="bpp-sub-content">
-                        <h4 class="bpp-sub-head">Social Widget</h4>
-                        <div class="bpp-sub-2-content">
+                    <div class="bpp-module">
+                        <h4 class="bpp-module-head">Social Widget</h4>
+                        <div class="bpp-module-content">
                             Yet to be built
                         </div>
                     </div>
                     <!-- END OF BPP SUB CONTENT MODULE : SOCIAL WIDGET -->
                     <!-- START OF BPP SUB CONTENT MODULE : YOU MIGHT LIKE -->
-                    <div class="bpp-sub-content">
-                        <h4 class="bpp-sub-head">You might also like</h4>
-                        <div class="bpp-sub-2-content">
+                    <div class="bpp-module">
+                        <h4 class="bpp-module-head">You might also like</h4>
+                        <div class="bpp-module-content">
                             Yet to be built
                         </div>
                     </div>

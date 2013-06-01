@@ -241,12 +241,10 @@ YUI.add('bpp-util',function(Y){
             if (container.all(el).size() > limit) {
                 if (type === 'hide') {
                     container.one('.bpp-more-details')
-                        .one('a')
-                            .setContent('View More Details');
+                        .setContent('View More Details');
                 } else {
                     container.one('.bpp-more-details')
-                        .one('a')
-                            .setContent('View Less Details');
+                        .setContent('View Less Details');
                 }
                 container.one('.bpp-more-details').show();
                 container.all(el).slice(limit).toggleClass('bpp-hide');

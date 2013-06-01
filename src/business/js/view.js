@@ -9,7 +9,14 @@ YUI.add('bpp-business-view',function(Y){
     };
 
     BusinessView.ATTRS = {
-        container : null
+        container : null,
+        reviewView : {
+            valueFn: function(){
+                return new Y.bpp.Review.View({
+                    container : this.get('container').one(Y.bpp.config('containers.review'))
+                });
+            }
+        }
     };
 
     BusinessView.NAME = 'businessView';
@@ -25,7 +32,7 @@ YUI.add('bpp-business-view',function(Y){
             '.bpp-less':{
                 'click': '_lessClick'
             },
-            '.bpp-more-details a':{
+            '.bpp-more-details':{
                 'click': '_moreDetailsClick'
             },
             '.bpp-see-all':{
@@ -38,23 +45,46 @@ YUI.add('bpp-business-view',function(Y){
         * params {hash} config
         * @return {void}
         */
-        initializer: function(config){
-
-        },
+        initializer: function(config){},
         /**
-        * @method render
+        * @method renderDescription
         * @return {void}
         */
-        render: function(){
+        renderDescription: function(){
             if (this.get('container').one('.bpp-description')) {
                 var descriptionNode = this.get('container').one('.bpp-description h3');
                 descriptionNode.setContent(
                     Y.bpp.util.stringTruncator(descriptionNode.getContent(),Y.bpp.config('business.descriptionLimit'))
                 );
             }
-            // if (t.get('container').one('.bpp-day-hours-container')) {
-            //     Y.bpp.util.seeAll(t.get('container').one('.srpl-day-hours-container'),'.srpl-day-hours',Y.srpl.config('business.hourLimit'));
-            // }
+        },
+        /**
+        * @method renderDetails
+        * @return {void}
+        */
+        renderDetails: function(){
+            if (this.get('container').one('.bpp-detail')) {
+                Y.bpp.util.domTruncator(
+                    this.get('container').one('.bpp-detail'),
+                    '.bpp-sub-module',
+                    Y.bpp.config('business.detailLimit')
+                );
+                if (this.get('container').one('.bpp-detail-hours')) {
+                    Y.bpp.util.seeAll(
+                        this.get('container').one('.bpp-detail-hours'),
+                        '.bpp-detail-day-hours',
+                        Y.bpp.config('business.dayHoursLimit')
+                    );
+                }
+            }
+        },
+        /**
+        * @method render
+        * @return {void}
+        */
+        render: function(){
+            this.renderDescription();
+            this.renderDetails();
         },
         /**
         * @method destructor
@@ -106,10 +136,10 @@ YUI.add('bpp-business-view',function(Y){
 
             e.preventDefault();
             Y.bpp.util.domTruncator(
-                target.ancestor('.bpp-detail-container'),
-                '.bpp-container-sub',
+                target.ancestor('.bpp-detail'),
+                '.bpp-sub-module',
                 Y.bpp.config('business.detailLimit'),
-                target.get('parentNode').hasClass('bpp-view-more') ? 'more' : 'hide'
+                target.hasClass('bpp-view-more') ? 'more' : 'hide'
             );
             this.fire('resize');
         },
@@ -133,6 +163,7 @@ YUI.add('bpp-business-view',function(Y){
 
 }, '@VERSION@',{
     requires:[
-        'view'
+        'view',
+        'bpp-review-view'
     ]
 });
