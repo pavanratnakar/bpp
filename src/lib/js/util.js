@@ -29,7 +29,7 @@ YUI.add('bpp-util',function(Y){
 
     // some modding to the environment
     var Util = {
-        debounce : function(func, wait, immediate){
+        debounce: function(func, wait, immediate){
             var timeout;
             return function () {
                 var context = this,
@@ -122,12 +122,43 @@ YUI.add('bpp-util',function(Y){
             return YUI_config.groups.bpp.base + module + '/' + path;
         },
         /**
+        * @method showFader
+        * @return {void}
+        */
+        showFader: function(){
+            Y.one('#bpp-fader-container').setStyles({
+                display: 'block',
+                visibility: 'visible',
+                height: Y.one('body').get('offsetHeight'),
+                width:  Y.one('body').get('offsetWidth')
+            });
+            Y.one('#bpp-fader-overlay').addClass('anim');
+        },
+        /**
+        * @method hideFader
+        * @return {void}
+        */
+        hideFader: function(){
+            Y.one('#bpp-fader-overlay').removeClass('anim');
+            Y.one('#bpp-fader-container').hide();
+        },
+        /**
+        * @method resizeFader
+        * @return {void}
+        */
+        resizeFader: function(){
+            Y.one('#bpp-fader-container').setStyles({
+                height : Y.one('body').get('offsetHeight'),
+                width :  Y.one('body').get('offsetWidth')
+            });
+        },
+        /**
         * Accessibility best focus
         * @method bestFocus
         * @param {object} data
         * @return {void}
         */
-        bestFocus:function(data){
+        bestFocus: function(data){
             var focus = false;
             data.container.all(data.type).some(function(node,index) {
                 if (!node.get('value')) {
@@ -145,42 +176,10 @@ YUI.add('bpp-util',function(Y){
             }
         },
         /**
-        * @method showFader
-        * @return {void}
-        */
-        showFader : function(){
-            Y.one('#bpp-fader-container').setStyles({
-                display : 'block',
-                visibility : 'visible',
-                height : Y.one('body').get('offsetHeight'),
-                width :  Y.one('body').get('offsetWidth')
-            });
-            Y.one('#bpp-fader-overlay').addClass('anim');
-        },
-        /**
-        * @method hideFader
-        * @return {void}
-        */
-        hideFader : function(){
-            Y.one('#bpp-fader-overlay').removeClass('anim');
-            Y.one('#bpp-fader-container').hide();
-        },
-        /**
-        * @method resizeFader
-        * @return {void}
-        */
-        resizeFader : function(e){
-            e = e || {};
-            Y.one('#bpp-fader-container').setStyles({
-                height : e.height || Y.one('body').get('offsetHeight'),
-                width :  e.width || Y.one('body').get('offsetWidth')
-            });
-        },
-        /**
         * @method tinifyURL
         * @return {void}
         */
-        tinifyURL : function(url, callback){
+        tinifyURL: function(url, callback){
             Y.YQL('INSERT INTO yahoo.y.ahoo.it (url) values ("'+url+'")', function(r) {
                 callback && callback (Y.bpp.util.atPath(r, 'query.results.url'));
             });
@@ -189,7 +188,7 @@ YUI.add('bpp-util',function(Y){
         * @method checkNodeHidden
         * @return {void}
         */
-        checkNodeHidden : function(node){
+        checkNodeHidden: function(node){
             if ((node.get('offsetWidth') === 0 && node.get('offsetHeight') === 0) || node.getStyle('display') === 'none') {
                 return true;
             } else {
@@ -209,7 +208,7 @@ YUI.add('bpp-util',function(Y){
         * @method namespaceExists
         * @return {function}
         */
-        namespaceExists : function (namespace) {
+        namespaceExists: function (namespace) {
             var tokens = namespace.split('.');
             return tokens.reduce(function(prev, curr) {
                 return (typeof prev == "undefined") ? prev : prev[curr];
@@ -226,7 +225,7 @@ YUI.add('bpp-util',function(Y){
         * @method truncator
         * @return {string}
         */
-        stringTruncator : function(str,limit){
+        stringTruncator: function(str,limit){
             if (str.length < limit ) return str;
             return str.slice(0,limit )+'<span> ...</span><a href="javascript:void(0);" class="bpp-more">more</a>'+
                 '<span style="display:none;">'+ str.slice(limit ,str.length)+'<span> ...</span><a href="javascript:void(0);" class="bpp-less">less</a></span>';
@@ -236,7 +235,7 @@ YUI.add('bpp-util',function(Y){
         * @method truncator
         * @return {string}
         */
-        domTruncator : function(container,el,limit,type){
+        domTruncator: function(container,el,limit,type){
             type = type || 'hide';
             if (container.all(el).size() > limit) {
                 if (type === 'hide') {
@@ -256,10 +255,53 @@ YUI.add('bpp-util',function(Y){
         * @method seeAll
         * @return {string}
         */
-        seeAll : function(container,el,limit){
+        seeAll: function(container,el,limit){
             if (container.all(el).size() > limit) {
                 container.one('.bpp-see-all').toggleClass('bpp-hide');
                 container.all(el).slice(limit).toggleClass('bpp-hide');
+            }
+        },
+        /**
+        * @method showTab
+        * @return {void}
+        */
+        showTab: function(container,target){
+            var index = target.get('parentNode').all('button').indexOf(target);
+
+            target
+                .addClass('active')
+                .siblings()
+                    .removeClass('active');
+
+            container.all('.bpp-tab').item(index)
+                .removeClass('bpp-hide')
+                .siblings()
+                    .addClass('bpp-hide');
+        },
+        /**
+        * @method getRandomInt
+        * @return {number}
+        */
+        getRandomInt: function(min,max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        },
+        /**
+        * @method generateRandomSumArray
+        * @return {array}
+        */
+        generateRandomSumArray: function(min,max,sum,temp,arr) {
+            temp = temp || 0;
+            arr = arr || [];
+            if (temp < sum) {
+                var number = Y.bpp.util.getRandomInt(min,max);
+                if (number + temp < sum) {
+                    temp = temp + number;
+                    arr.push(number);
+                    return Y.bpp.util.generateRandomSumArray(min,max,sum,temp,arr);
+                } else {
+                    arr.push(sum-temp);
+                    return arr;
+                }
             }
         },
         /**

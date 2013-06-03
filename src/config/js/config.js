@@ -2,27 +2,36 @@ YUI.add('bpp-config', function(Y){
 
     var config = {
         containers: {
-            business : '.bpp-content',
-            review : '.bpp-yahoo-reviews'
+            business: '.bpp-content',
+            review: '.bpp-yahoo-reviews',
+            social: '.bpp-social-module',
+            sponsored: '.bpp-sponsored-module'
         },
         ymaps: {
             appid: 'ymapsaura2',
             zoomLevel: 10,
-            pan : false,
-            zoom : true,
-            scale : false,
-            keyboard : false,
-            mouse : false,
-            mapTypeControl : false,
-            zoomControl : true,
-            traffic : false,
-            zoomThresholdLevel : 16,
-            animatedTransitions : true // default true. Override it if required
+            pan: false,
+            zoom: true,
+            scale: false,
+            keyboard: false,
+            mouse: false,
+            mapTypeControl: false,
+            zoomControl: true,
+            traffic: false,
+            zoomThresholdLevel: 16,
+            animatedTransitions: true // default true. Override it if required
         },
-        business:{
-            descriptionLimit : 300,
-            detailLimit : 4,
-            dayHoursLimit : 5
+        business: {
+            descriptionLimit: 300,
+            detailLimit: 4,
+            dayHoursLimit: 2
+        },
+        overlay: {
+            zIndex: 101,
+            offset: 40
+        },
+        gallery: {
+            gridTypes: ['1-5','2-5','3-5']
         }
     };
 

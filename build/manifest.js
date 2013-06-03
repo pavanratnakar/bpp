@@ -15,9 +15,17 @@ YUI_config.groups.bpp = {
                 "bpp-config",
                 "bpp-business-view",
                 "bpp-business-model",
-                "bpp-map-view"
+                "bpp-map-view",
+                "bpp-app-templates"
             ],
             "path": "app/js/app.js",
+            "type": "js"
+        },
+        "bpp-app-templates": {
+            "requires": [
+                "bpp-template"
+            ],
+            "path": "app/js/templates.js",
             "type": "js"
         },
         "bpp-app-css": {
@@ -35,7 +43,13 @@ YUI_config.groups.bpp = {
         "bpp-business-view": {
             "requires": [
                 "view",
-                "bpp-review-view"
+                "bpp-review-view",
+                "bpp-social-view",
+                "bpp-sponsored-view",
+                "bpp-gallery-view",
+                "bpp-util",
+                "bpp-photo-model-list",
+                "bpp-jsonp"
             ],
             "path": "business/js/view.js",
             "type": "js"
@@ -52,6 +66,44 @@ YUI_config.groups.bpp = {
             ],
             "path": "config/js/config.js",
             "type": "js"
+        },
+        "bpp-photo-model-list": {
+            "requires": [
+                "model-list",
+                "bpp-photo-model"
+            ],
+            "path": "gallery/js/photo-model-list.js",
+            "type": "js"
+        },
+        "bpp-photo-model": {
+            "requires": [
+                "model"
+            ],
+            "path": "gallery/js/photo-model.js",
+            "type": "js"
+        },
+        "bpp-gallery-templates": {
+            "requires": [
+                "bpp-template"
+            ],
+            "path": "gallery/js/templates.js",
+            "type": "js"
+        },
+        "bpp-gallery-view": {
+            "requires": [
+                "view",
+                "overlay",
+                "bpp-gallery-css",
+                "bpp-gallery-templates",
+                "bpp-config"
+            ],
+            "path": "gallery/js/view.js",
+            "type": "js"
+        },
+        "bpp-gallery-css": {
+            "requires": [],
+            "path": "gallery/css/gallery.css",
+            "type": "css"
         },
         "bpp-hero-css": {
             "requires": [],
@@ -143,10 +195,9 @@ YUI_config.groups.bpp = {
         "bpp-review-view": {
             "requires": [
                 "view",
-                "bpp-review-model",
-                "bpp-review-css",
                 "bpp-util",
-                "bpp-config"
+                "bpp-review-model",
+                "bpp-review-css"
             ],
             "path": "review/js/view.js",
             "type": "js"
@@ -154,6 +205,34 @@ YUI_config.groups.bpp = {
         "bpp-review-css": {
             "requires": [],
             "path": "review/css/review.css",
+            "type": "css"
+        },
+        "bpp-social-view": {
+            "requires": [
+                "view",
+                "bpp-util",
+                "bpp-social-css"
+            ],
+            "path": "social/js/social.js",
+            "type": "js"
+        },
+        "bpp-social-css": {
+            "requires": [],
+            "path": "social/css/social.css",
+            "type": "css"
+        },
+        "bpp-sponsored-view": {
+            "requires": [
+                "view",
+                "bpp-util",
+                "bpp-sponsored-css"
+            ],
+            "path": "sponsored/js/sponsored.js",
+            "type": "js"
+        },
+        "bpp-sponsored-css": {
+            "requires": [],
+            "path": "sponsored/css/sponsored.css",
             "type": "css"
         }
     }

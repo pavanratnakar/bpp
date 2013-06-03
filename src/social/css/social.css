@@ -1,0 +1,35 @@
+/************************************************************************
+    Start of BPP Social
+************************************************************************/
+
+.bpp .bpp-social-module {
+    border: 1px solid #C9C9C9;
+    padding: 0;
+}
+
+.bpp-social-module .bpp-social-actions{
+    border-bottom: 1px solid #C9C9C9;
+    padding: 0.4em;
+}
+
+.bpp-social-module .bpp-social-actions,
+.bpp-social-module .bpp-social-container{
+    padding: 0.5em 1em;
+}
+
+.bpp-social-module .bpp-social-actions button{
+    margin: 0 1em 0 0;
+    color: #5F5F5F;
+    font-weight: 0.9em;
+}
+
+.bpp-social-module .bpp-social-actions button.active{
+    font-weight:        bold;
+}
+
+/************************x************************************************
+    End of BPP Social
+************************************************************************/
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.bpp-social-css { display: none; }

@@ -16,7 +16,23 @@ YUI.add('bpp-business-view',function(Y){
                     container : this.get('container').one(Y.bpp.config('containers.review'))
                 });
             }
-        }
+        },
+        socialView : {
+            valueFn: function(){
+                return new Y.bpp.Social.View({
+                    container : this.get('container').one(Y.bpp.config('containers.social'))
+                });
+            }
+        },
+        sponsoredView : {
+            valueFn: function(){
+                return new Y.bpp.Social.View({
+                    container : this.get('container').one(Y.bpp.config('containers.sponsored'))
+                });
+            }
+        },
+        photoList : null,
+        galleryView : null
     };
 
     BusinessView.NAME = 'businessView';
@@ -37,6 +53,9 @@ YUI.add('bpp-business-view',function(Y){
             },
             '.bpp-see-all':{
                 'click': '_seeAllClick'
+            },
+            '.bpp-show-gallery':{
+                'click': '_showGallery'
             }
         },
         /**
@@ -77,6 +96,61 @@ YUI.add('bpp-business-view',function(Y){
                     );
                 }
             }
+        },
+        /**
+        * @method renderGallery
+        * @return {void}
+        */
+        renderGallery: function(){
+            var t = this;
+
+            if (!this.get('list')) {
+                this.set('list',new Y.bpp.Photo.Model.List());
+            }
+            if (!this.get('galleryView')) {
+                this.set('galleryView',new Y.bpp.Gallery.View({
+                    'list' : this.get('list')
+                }));
+            }
+            // HACK FOR NOW
+            var q = 'http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key={apiKey}&privacy_filter={privacyFilter}&safe_search={safe_search}&text={text}&per_page={perPage}&accuracy={accuracy}&sort={sort}&format=json',
+                query = Y.Lang.sub(q,{
+                    'apiKey' : 'febe9ecc58779b03d17ec7c0828eca68',
+                    'text' : 'earth',
+                    'privacyFilter' : 1,
+                    'safe_search' : 1,
+                    'perPage' : 50,
+                    'accuracy' : 10,
+                    'sort' : 'interestingness-desc'
+                });
+
+            Y.bpp.jsonp(encodeURI(query),{
+                on:{
+                    success:function(res){
+                        Y.each(res.photos.photo,function(p,i){
+                            t.get('list').add({
+                                'thumb':'http://farm'+ p.farm +'.staticflickr.com/'+ p.server +'/'+ p.id +'_'+ p.secret +'_z.jpg',
+                                'href' : 'http://farm'+ p.farm +'.staticflickr.com/'+ p.server +'/'+ p.id +'_'+ p.secret +'-n.jpg',
+                                'title' : p.title,
+                                'id' : p.id
+                            });
+                        });
+                    },
+                    failure:function(err){},
+                    timeout:function(err){}
+                }
+            },{
+                callbackName: 'jsoncallback',
+                // checking caching
+                cacheWhen: function(data){
+                    if (data.stat && data.stat === "ok") {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            });
+            this.get('galleryView').render();
         },
         /**
         * @method render
@@ -155,6 +229,17 @@ YUI.add('bpp-business-view',function(Y){
             target.get('parentNode').all('p').removeClass('bpp-hide');
             target.addClass('bpp-hide');
             this.fire('resize');
+        },
+        /**
+        * @method _showGallery
+        * @params {e} e
+        * @return {void}
+        */
+        _showGallery: function(e){
+            var target = e.currentTarget;
+
+            e.preventDefault();
+            this.renderGallery();
         }
     });
 
@@ -164,6 +249,12 @@ YUI.add('bpp-business-view',function(Y){
 }, '@VERSION@',{
     requires:[
         'view',
-        'bpp-review-view'
+        'bpp-review-view',
+        'bpp-social-view',
+        'bpp-sponsored-view',
+        'bpp-gallery-view',
+        'bpp-util',
+        'bpp-photo-model-list',
+        'bpp-jsonp'
     ]
 });

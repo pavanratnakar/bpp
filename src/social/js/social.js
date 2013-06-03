@@ -1,33 +1,34 @@
 /**
- * Create a new bpp-review view class that extends Y.View and renders the current
- * state of a bpp-review instance.
- * @module bpp-review-view
+ * @module bpp-social
  * @requires
 */
-YUI.add('bpp-review-view', function(Y){
+YUI.add('bpp-social-view',function(Y){
+    "use strict";
 
-    var ReviewView = function(){
-        ReviewView.superclass.constructor.apply(this, arguments);
+    var SocialView = function(config){
+        SocialView.superclass.constructor.apply(this, arguments);
     };
 
-    // Attributes and static properties for bpp-review View.
-    ReviewView.ATTRS = {
-        container : null,
-        model : Y.bpp.Review.Model
+    SocialView.ATTRS = {
+        container : null
     };
 
-    Y.extend(ReviewView, Y.View, {
-        eventListners : [],
-        template: '',
+    SocialView.NAME = 'socialView';
+    SocialView.NS = 'social';
+
+    Y.extend(SocialView, Y.View, {
+        eventListeners : [],
+        template : '',
         // Specify delegated DOM events to attach to the bpp-business container.
         events:{
-            '.bpp-reviews-actions-type button' : {
-                'click' : '_showReviewType'
+            '.bpp-social-actions button' : {
+                'click' : '_showSocialType'
             }
         },
         /**
         * The initializer function will run when a view is instantiated
         * @method initializer
+        * params {hash} config
         * @return {void}
         */
         initializer: function(config){
@@ -37,41 +38,41 @@ YUI.add('bpp-review-view', function(Y){
         },
         /**
         * @method render
-        * @return {boolean}
-        */
-        render: function(){},
-        /**
-        * @method clear
         * @return {void}
         */
-        clear: function(){},
+        render: function(e){},
         /**
         * @method destructor
         * @return {void}
         */
-        destructor: function(){
+        destructor : function(){
             this.eventListeners = Y.bpp.util._destructor(this.eventListeners);
         },
+        /**
+        * @method clear
+        * @return {void}
+        */
+        clear : function(){},
 
         // -- Event Handlers -------------------------------------------------------
 
         /**
-        * @method _showReviewType
+        * @method _showSocialType
         * @params {e} e
         * @return {void}
         */
-        _showReviewType: function(e){
+        _showSocialType: function(e){
             Y.bpp.util.showTab(this.get('container'),e.currentTarget);
         }
     });
 
-    Y.namespace('bpp.Review');
-    Y.bpp.Review.View = ReviewView;
+    Y.namespace('bpp.Social');
+    Y.bpp.Social.View = SocialView;
+
 }, '@VERSION@',{
     requires:[
         'view',
         'bpp-util',
-        'bpp-review-model',
-        'bpp-review-css'
+        'bpp-social-css'
     ]
 });

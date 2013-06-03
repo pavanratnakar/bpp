@@ -47,6 +47,38 @@ YUI.add('bpp-app-view',function(Y){
     Y.extend(AppView, Y.View, {
         eventListeners : [],
         /**
+        * key events
+        * @method keyEvents
+        * @return {void}
+        */
+        keyEvents : function(){
+            var keydownListener = Y.one('body').on('keydown', function(e){
+                switch(e.keyCode) {
+                    case 27: // escape key press
+                        Y.fire('bpp::keydown:escape');
+                    break;
+
+                    default:
+                      // do noting
+                    break;
+                }
+            });
+
+            this.eventListeners.push(keydownListener);
+        },
+        /**
+         * initEvents
+         * @return {void}
+        */
+        initEvents : function(){
+            this.keyEvents();
+
+            var windowresizeListener = Y.on('windowresize', function(){
+                Y.fire('bpp:resize');
+            },null);
+            this.eventListeners.push(windowresizeListener);
+        },
+        /**
         * The initializer function will run when a view is instantiated
         * @method initializer
         * params {hash} config
@@ -55,6 +87,11 @@ YUI.add('bpp-app-view',function(Y){
         initializer: function(config){
             config = config || {};
             Y.log('BPP : INIT');
+                // append myc fader
+            if (!Y.one('#bpp-fader-container')) {
+                Y.one('body').appendChild(Y.bpp.App.templates.fader());
+            }
+            this.initEvents();
         },
         /**
         * @method render
@@ -103,6 +140,7 @@ YUI.add('bpp-app-view',function(Y){
         'bpp-config',
         'bpp-business-view',
         'bpp-business-model',
-        'bpp-map-view'
+        'bpp-map-view',
+        'bpp-app-templates'
     ]
 });

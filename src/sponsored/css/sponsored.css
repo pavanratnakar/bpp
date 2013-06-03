@@ -1,0 +1,36 @@
+/************************************************************************
+    Start of BPP Sponsored
+************************************************************************/
+
+.bpp .bpp-sponsored-module{
+    background: #FBFBFF;
+    position: relative;
+}
+
+.bpp .bpp-sponsored-module .bpp-module-head{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.9em;
+    color: grey;
+}
+
+.bpp .bpp-sponsored-module .bpp-module-content li{
+    padding: 1em 0;
+    line-height: 1.5em;
+}
+
+.bpp .bpp-sponsored-module .bpp-module-content .sponsored-title{
+    font-size: 1.4em;
+}
+
+.bpp .bpp-sponsored-module .bpp-module-content .sponsored-web{
+    color: #1E7D83;
+}
+
+/************************x************************************************
+    End of BPP Sponsored
+************************************************************************/
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.bpp-sponsored-css { display: none; }
