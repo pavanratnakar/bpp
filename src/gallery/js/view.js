@@ -40,14 +40,15 @@ YUI.add('bpp-gallery-view',function(Y){
         * @return {void}
         */
         initEvents : function(){
-            var globalListeners = Y.on({
-                'bpp::keydown:escape': function(e){
-                    this.close();
-                },
-                'bpp:resize': function(e){
-                    //this.syncUI();
-                }
-            });
+            var t = this,
+                globalListeners = Y.on({
+                    'bpp::keydown:escape': function(e){
+                        t.close();
+                    },
+                    'bpp:resize': function(e){
+                        //this.syncUI();
+                    }
+                });
             this.eventListeners.push(globalListeners);
         },
         /**
@@ -120,8 +121,8 @@ YUI.add('bpp-gallery-view',function(Y){
             this.get('container')
                 .show()
                 .addClass('bpp-loading');
-            this.syncUI();
             this.get('overlay').show();
+            this.syncUI();
             this.get('overlay').render();
         },
         /**

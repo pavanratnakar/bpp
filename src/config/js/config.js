@@ -31,7 +31,7 @@ YUI.add('bpp-config', function(Y){
             offset: 40
         },
         gallery: {
-            gridTypes: ['1-5','2-5','3-5']
+            gridTypes: ['1-5','2-5']
         }
     };
 
